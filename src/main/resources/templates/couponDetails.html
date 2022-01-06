@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>couponDetails</title>
+</head>
+<body>
+<h2>Coupon Details</h2>
+CODE:<b th:text="${coupon.code}"></b></br>
+DISCOUNT:<b th:text="${coupon.discount}"></b></br>
+EXPIRY DATE:<b th:text="${coupon.expDate}"></b></br>
+<a href= "/showCoupons">Back</a>
+</body>
+</html>
