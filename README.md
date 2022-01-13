@@ -5,5 +5,7 @@ is part of Spring cloud but inl latest it developed by Spring as separate projec
 
 Here we are Implementing the JWT with Oauth Spring Security 
 in this implementation we have used Authorization server & Resource server in same project
-in next part we remove the Authorization server  from  coupon service and create a separate one .
+
+## in this  part 
+we  have been removed the Authorization server from coupon service and create a separate  project  .
 resource server still will be part of coupon service 
