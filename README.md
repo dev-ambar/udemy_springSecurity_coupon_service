@@ -6,4 +6,7 @@ is part of Spring cloud but inl latest it developed by Spring as separate projec
 Here we are Implementing the JWT with Oauth Spring Security 
 
 in this  part we will remove the Authorization server from coupon-service and create a separate one .
-resource server still is being part of coupon service 
+resource server still is being part of coupon service
+
+in this release we are adding the feature of to consume dynamic public key to consume the restApi of Authorization server
+and removing unnecessary code for validating token by public key 
