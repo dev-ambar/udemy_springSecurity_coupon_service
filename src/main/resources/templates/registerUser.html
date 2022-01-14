@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Register User</title>
 </head>
 <body>
 <h2>User Registration:</h2>
-<form action="registerUser" method="post">
-<pre>
-First Name: <input type="text" name="firstName"/>
-Last Name:  <input type="text" name="lastName"/>
-User Name: <input type="text" name="email"/>
-Password: <input type="password" name="password"/>
-Confirm Password: <input type="password" name="confirmPassword"/>
-<input type="submit" value="register"/>
-</pre>
+<form th:action="@{/registerUser}" method="post">
+    <div><label>First Name:</label>
+        <input type="text" name="firstName"/>
+    </div>
+    <div><label>Last Name:</label>
+        <input type="text" name="lastName"/>
+    </div>
+    <div><label>User Name:</label>
+        <input type="text" name="email"/>
+    </div>
+    <div><label>Password:</label>
+        <input type="password" name="password"/>
+    <label>Confirm Password:</label>
+        <input type="password" name="confirmPassword"/>
+    </div>
+<div><input type="submit" value="REGISTER"/></div>
 </form>
-
 </body>
 </html>

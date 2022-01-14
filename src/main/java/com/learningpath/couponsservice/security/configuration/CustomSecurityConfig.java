@@ -11,6 +11,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.util.matcher.RegexRequestMatcher;
+import org.springframework.security.web.util.matcher.RequestMatcher;
 
 @Configuration
 public class CustomSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -29,7 +31,12 @@ public class CustomSecurityConfig extends WebSecurityConfigurerAdapter {
                 .mvcMatchers("/","/login","/logout","/registerUser","/showReg").permitAll()
                 .anyRequest().denyAll().and().logout().logoutSuccessUrl("/");
 
-        httpSecurity.csrf().disable();
+
+        httpSecurity.csrf(httpSecurityCsrfConfigurer -> {
+            httpSecurityCsrfConfigurer.ignoringAntMatchers("/couponapi/coupons/{code:^[A-Za-z0-9]*$}","/couponapi/coupons","/showCoupons");
+            RequestMatcher requestMatcher = new RegexRequestMatcher("/couponDetails","POST");
+            httpSecurityCsrfConfigurer.ignoringRequestMatchers(requestMatcher);
+        });
     }
 
     @Override
