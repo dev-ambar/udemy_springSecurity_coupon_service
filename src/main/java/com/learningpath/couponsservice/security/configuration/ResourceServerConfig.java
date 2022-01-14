@@ -11,11 +11,11 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
-    private static final String RESOURCE_ID = "couponservice";
+    private static final String CLIENT_RESOURCE_ID = "couponservice";
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-        resources.resourceId(RESOURCE_ID);
+        resources.resourceId(CLIENT_RESOURCE_ID);
     }
 
     @Override
